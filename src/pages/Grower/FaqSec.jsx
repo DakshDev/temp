@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react'; // Changed from Plus/Minus to ChevronUp/ChevronDown
-import Top_Image from "../../assets/Grower/faq.png"
-import { useTranslation } from '../../hooks/useTranslation';
+import Top_Image from "../../assets/Grower/faq.webp"
 // --- DESIGN CONSTANTS ---
 const PRIMARY_GREEN = '#00C29F'; // Main accent color (Question text, Chevron icon)
 const DARK_GRAY = '#333333';   // Main header and dark text color
@@ -10,11 +9,10 @@ const LIGHT_GREEN = '#E6FAF5'; // Border color, surrounding container border
 // const LIGHT_GRAY = '#F5FFEE';  // Background color for inactive items (custom shade for soft gray-green look)
 const LIGHT_GRAY = "#F0F1F2"
 
-const FaqSec = () => {
+const FaqSec = ({ tr }) => {
   // State to manage which FAQ item is currently open (stores the ID)
   const [openId, setOpenId] = useState(2); // Defaulting to the first item open
-
-  const tr = useTranslation();
+  // const tr = useTranslation();
 
   const faqs = [
   { id: 1, question: tr("faq_1_q"), answer: tr("faq_1_a") },
@@ -35,7 +33,7 @@ const FaqSec = () => {
       {/* BACKGROUND IMAGE / SHAPES (Simulating a background design element) */}
       <div className="absolute inset-0 overflow-hidden opacity-70">
         {/* Large circle top right */}
-        <img src={Top_Image} alt="" />
+        <img loading='lazy' src={Top_Image} alt="" />
         
         {/* Smaller shape bottom left */}
         

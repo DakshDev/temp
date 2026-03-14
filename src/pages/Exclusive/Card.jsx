@@ -1,8 +1,7 @@
-import React from 'react';
-import icon1 from "../../assets/Exclusive/icon1.png"
-import icon2 from "../../assets/Exclusive/icon2.png"
-import icon3 from "../../assets/Exclusive/icon3.png"
-import icon4 from "../../assets/Exclusive/icon4.png"
+import icon1 from "../../assets/Exclusive/icon1.webp"
+import icon2 from "../../assets/Exclusive/icon2.webp"
+import icon3 from "../../assets/Exclusive/icon3.webp"
+import icon4 from "../../assets/Exclusive/icon4.webp"
 import { useTranslation } from '../../hooks/useTranslation';
 
 const Card = () => {
@@ -56,7 +55,7 @@ const Card = () => {
               {/* Centered Icon Container */}
               <div className="w-20 h-20 rounded-[100%] bg-[#2088371A] shadow-sm flex items-center justify-center text-3xl mb-10  transition-transform duration-300">
                 {/* group-hover:scale-110 */}
-                <img src={item.icon} className='w-10' alt="" />
+                <img loading="lazy" src={item.icon} className='w-10' alt="" />
               </div>
 
               {/* Centered Text Content */}

@@ -1,10 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Buenard:wght@400..700&family=Manrope:wght@200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Buenard:wght@400..700&family=Manrope:wght@200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap'); */
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@theme {
+/* ================= FONTS ================= */
 
+@font-face {
+  font-family: "Buenard";
+  src: url("/fonts/Buenard_wght.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("/fonts/Urbanist_wght.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope_wght.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
     /* fontFamily */
   --font-Buenard: "Buenard", sans-serif;
   --font-Urbanist: "Urbanist", sans-serif;
@@ -233,6 +258,7 @@
 
 body{
   scroll-behavior: smooth;
+  font-display: swap;
 }
 
 html{

@@ -1,9 +1,7 @@
-import React from "react";
-import Banner from "../../assets/Grower/SessionsGrower.png";
-import Banner1 from "../../assets/Grower/SessionsGrowerMobile.png";
-import JoinWaitlist_Btn from "../../components/JoinWaitlist_Btn";
-import LeftShade from "../../assets/Grower/LeftShade.png"
-import RightShade from "../../assets/Grower/RightShade.png"
+import Banner from "../../assets/Grower/SessionsGrower.webp";
+import Banner1 from "../../assets/Grower/SessionsGrowerMobile.webp";
+import LeftShade from "../../assets/Grower/LeftShade.webp"
+import RightShade from "../../assets/Grower/RightShade.webp"
 import WatchAVideo from "../../components/WatchAVideo";
 import ExclusiveAccessCard from "./ExclusiveAccessCard";
 import PayButton from "../../components/PayButton";
@@ -42,17 +40,17 @@ const HeroGrower = () => {
 
       {/* Image Section */}
       <div className="xs:mt-10 lg:mt-16 xs:mb-5 lg:mb-0 mx-auto xs:w-full xl:w-[1050px] z-0 relative">
-        <img src={Banner} className="z-10  blur-sm  relative xs:hidden lg:inline lg:relative lg:w-full lg:h-auto " />
-        <img src={Banner1} className="z-10  blur-sm relative xs:inline xs:w-full xs:h-full lg:hidden" />
+        <img loading='lazy' src={Banner} className="z-10  blur-sm  relative xs:hidden lg:inline lg:relative lg:w-full lg:h-auto " />
+        <img loading='lazy' src={Banner1} className="z-10  blur-sm relative xs:inline xs:w-full xs:h-full lg:hidden" />
 
 
         {/* left Shade */}
         <div className="absolute xs:top-0 lg:-top-48 lg:-left-60 z-0">
-          <img src={LeftShade} alt="" className="" />
+          <img loading='lazy' src={LeftShade} alt="" className="" />
         </div>
         {/* Right Shade */}
         <div className="absolute xs:top-0 lg:-top-48 lg:-right-60 z-0">
-          <img src={RightShade} alt="" className="" />
+          <img loading='lazy' src={RightShade} alt="" className="" />
         </div>
 
 

@@ -1,19 +1,17 @@
-import React from 'react';
-import { useTranslation } from '../hooks/useTranslation';
-
 // Import brand logos
 import indiegogo from '../assets/brands/indiegogo.webp';
 import stripe from '../assets/brands/stripe.png';
 import featured from "../assets/brands/featured.png";
+import mercury from "../assets/brands/mercury.png";
 
-const TrustedBy = () => {
-  const tr = useTranslation();
+const TrustedBy = ({tr}) => {
+  // const tr = useTranslation();
 
   // Partner logos - switch between local images and API
   const partners = [
     { name: 'Indiegogo', logo: indiegogo, height: 'h-6 md:h-7' },
     { name: 'Stripe', logo: stripe, height: 'h-8 md:h-10' },
-    { name: 'Mercury', logo: "https://foundershield.com/wp-content/uploads/2024/02/mercury-com-logo-vector-2.png", height: 'h-8 md:h-10' },
+    { name: 'Mercury', logo: mercury, height: 'h-8 md:h-10' },
     { name: 'Featured', logo: featured, height: 'h-auto md:h-auto' },
   ];
 

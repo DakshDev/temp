@@ -1,17 +1,12 @@
-import React, { useContext } from 'react';
-import frame1 from "../../assets/Exclusive/frame.png"
-import frame2 from "../../assets/Exclusive/frame2.png"
+import { useContext } from 'react';
+import frame1 from "../../assets/Exclusive/frame.webp"
+import frame2 from "../../assets/Exclusive/frame2.webp"
 import JoinWaitlist_Btn from '../../components/JoinWaitlist_Btn';
 import { IoMdMail } from "react-icons/io";
 import { AppContext } from '../../context/AppContext';
-import { useTranslation } from '../../hooks/useTranslation';
-import { useLang } from '../../context/LanguageContext';
 
-const ExclusiveAccessCard = ({ headline, subheadline, body }) => {
+const ExclusiveAccessCard = ({ headline, subheadline, body, tr }) => {
   const { waitListEmail, setWaitListEmail } = useContext(AppContext);
-
-  const tr = useTranslation();
-  const { lang } = useLang();
 
   return (
     <div className="py-10 bg-gray-100 flex items-center justify-center">
@@ -68,11 +63,11 @@ const ExclusiveAccessCard = ({ headline, subheadline, body }) => {
 
         {/* Image Section */}
         <div className="relative z-10 w-full md:w-2/5 flex md:justify-center md:items-center justify-end items-end">
-          <img src={frame1} alt="3D Abstract Knot"
+          <img loading='lazy' src={frame1} alt="3D Abstract Knot"
             className="md:w-full rounded-[40px] md:flex hidden md:h-full object-cover h-[350px] w-[350px] drop-shadow-2xl"
           />
 
-          <img src={frame2} alt="3D Abstract Knot"
+          <img loading='lazy' src={frame2} alt="3D Abstract Knot"
             className="md:w-full md:hidden rounded-[40px] mt-[-30%] flex md:h-full object-cover w-full drop-shadow-2xl"
           />
         </div>

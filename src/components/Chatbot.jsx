@@ -53,10 +53,9 @@ const Chatbot = () => {
     }, [lang]);
 
     useEffect(() => {
-        // Auto-open chat to greet the user
         const timer = setTimeout(() => {
             setIsOpen(true);
-        }, 1500);
+        }, 3000);
         return () => clearTimeout(timer);
     }, []);
 

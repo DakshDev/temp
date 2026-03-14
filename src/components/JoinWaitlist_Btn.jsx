@@ -1,9 +1,47 @@
 import { useEffect, useState } from 'react';
-import '../index.css';
-import SurveyModal from './SurveyModal';
+// import '../index.css';
+import { lazy, Suspense } from 'react';
+const SurveyModal = lazy(() => import('./SurveyModal'));
 import { useLang } from '../context/LanguageContext';
 
-const JoinWaitlist_Btn = ({label, compactArabic = false}) => {
+
+
+export function JoinWaitlistLoader(){
+  return (
+      <div className="fixed z-[100] inset-0 h-[100dvh] w-screen flex items-center justify-center p-2 sm:p-4">
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+  
+        {/* FIX 2: Adjusted max-h to 85dvh for mobile to ensure the entire modal + shadow is visible */}
+        <div className="relative w-full max-w-2xl bg-white rounded-[30px] md:rounded-[40px] shadow-2xl overflow-hidden flex flex-col min-h-[85dvh] md:max-h-[92vh] animate-in zoom-in-95 duration-300">
+  
+          {/* Header - Fixed */}
+          <div className="w-full mt-0 py-4 md:py-6 shrink-0 relative" style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}>
+            
+            <div className='bg-black/20 animate-pulse min-h-9 rounded-md max-w-40 mx-auto'></div>
+          </div>
+  
+          {/* Form Body - Scrollable */}
+          <div className='p-10'>
+            <div className="grid gap-2 mb-8 px-20">
+              <div className='bg-black/20 animate-pulse min-h-9 rounded-md'></div>
+              <div className='bg-black/20 animate-pulse min-h-9 rounded-md'></div>
+            </div>
+  
+            <div className='grid gap-4'>
+            <div className='bg-black/20 animate-pulse min-h-12 rounded-md'></div>
+            <div className='bg-black/20 animate-pulse min-h-12 rounded-md'></div>
+            <div className='bg-black/20 animate-pulse min-h-12 rounded-md'></div>
+            <div className='bg-black/20 animate-pulse min-h-12 rounded-md'></div>
+            <div className='bg-black/20 animate-pulse min-h-12 rounded-md'></div>
+            </div>
+          </div>
+        </div>
+      </div>
+)};
+
+
+export default function JoinWaitlist_Btn({label, compactArabic = false}){
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { lang } = useLang();
 
@@ -41,10 +79,11 @@ const JoinWaitlist_Btn = ({label, compactArabic = false}) => {
           {label}
         </span>
       </button>
-
-      {isModalOpen && <SurveyModal onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && (
+        <Suspense fallback={<JoinWaitlistLoader />}>
+          <SurveyModal onClose={() => setIsModalOpen(false)} />
+        </Suspense>
+      )}
     </>
   );
 };
-
-export default JoinWaitlist_Btn;

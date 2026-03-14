@@ -6,7 +6,13 @@ export default withRTL({
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        buenard: ["Buenard", "serif"],
+        urbanist: ["Urbanist", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

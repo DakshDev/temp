@@ -17,7 +17,6 @@ import portrait15 from "../assets/portraits/portrait-15.webp";
 import portrait16 from "../assets/portraits/portrait-16.webp";
 import portrait17 from "../assets/portraits/portrait-17.webp";
 import portrait18 from "../assets/portraits/portrait-18.webp";
-import { useTranslation } from '../hooks/useTranslation';
 import JoinWaitlist_Btn from './JoinWaitlist_Btn';
 
 const leftPortraits = [
@@ -131,8 +130,8 @@ const PortraitCard = ({ src, size, opacity, style }) => {
   );
 };
 
-const SuccessStories = () => {
-  const tr = useTranslation();
+const SuccessStories = ({tr}) => {
+  // const tr = useTranslation();
   const [screenSize, setScreenSize] = useState('desktop');
 
   useEffect(() => {
@@ -227,35 +226,35 @@ const SuccessStories = () => {
           <div className="relative w-full max-w-md h-[400px] mb-8">
             {/* First row - top */}
             <div className="absolute top-0 left-[5%] w-24 h-28 rounded-2xl overflow-hidden shadow-lg">
-              <img src={portrait18} alt="Success story" className="w-full h-full object-cover" />
+              <img loading='lazy' src={portrait18} alt="Success story" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-0 left-[30%] w-32 h-36 rounded-2xl overflow-hidden shadow-lg">
-              <img src={portrait1} alt="Success story" className="w-full h-full object-cover" />
+              <img loading='lazy' src={portrait1} alt="Success story" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-8 right-[5%] w-28 h-32 rounded-2xl overflow-hidden shadow-lg">
-              <img src={portrait7} alt="Success story" className="w-full h-full object-cover" />
+              <img loading='lazy' src={portrait7} alt="Success story" className="w-full h-full object-cover" />
             </div>
 
             {/* Second row - middle */}
             <div className="absolute top-[35%] left-[2%] w-28 h-32 rounded-2xl overflow-hidden shadow-lg">
-              <img src={portrait3} alt="Success story" className="w-full h-full object-cover" />
+              <img loading='lazy' src={portrait3} alt="Success story" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-[32%] left-[32%] w-32 h-40 rounded-2xl overflow-hidden shadow-lg">
-              <img src={portrait15} alt="Success story" className="w-full h-full object-cover" />
+              <img loading='lazy' src={portrait15} alt="Success story" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-[38%] right-[8%] w-24 h-28 rounded-2xl overflow-hidden shadow-lg">
-              <img src={portrait8} alt="Success story" className="w-full h-full object-cover" />
+              <img loading='lazy' src={portrait8} alt="Success story" className="w-full h-full object-cover" />
             </div>
 
             {/* Third row - bottom */}
             <div className="absolute bottom-0 left-[8%] w-28 h-32 rounded-2xl overflow-hidden shadow-lg">
-              <img src={portrait14} alt="Success story" className="w-full h-full object-cover" />
+              <img loading='lazy' src={portrait14} alt="Success story" className="w-full h-full object-cover" />
             </div>
             <div className="absolute bottom-2 left-[38%] w-28 h-32 rounded-2xl overflow-hidden shadow-lg">
-              <img src={portrait6} alt="Success story" className="w-full h-full object-cover" />
+              <img loading='lazy' src={portrait6} alt="Success story" className="w-full h-full object-cover" />
             </div>
             <div className="absolute bottom-0 right-[2%] w-32 h-36 rounded-2xl overflow-hidden shadow-lg">
-              <img src={portrait13} alt="Success story" className="w-full h-full object-cover" />
+              <img loading='lazy' src={portrait13} alt="Success story" className="w-full h-full object-cover" />
             </div>
           </div>
 

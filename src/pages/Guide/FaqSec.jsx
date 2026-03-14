@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react'; // Changed from Plus/Minus to ChevronUp/ChevronDown
-import Top_Image from "../../assets/Grower/faq.png"
+import Top_Image from "../../assets/Grower/faq.webp"
 import { useTranslation } from '../../hooks/useTranslation';
 // --- DESIGN CONSTANTS ---
 const PRIMARY_GREEN = '#00C29F'; // Main accent color (Question text, Chevron icon)

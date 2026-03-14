@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { createPortal } from "react-dom";
 import { GrMenu } from "react-icons/gr";
 import { FaChevronDown, FaThLarge, FaSignOutAlt, FaUserAlt, FaPen, FaBook } from "react-icons/fa";
@@ -9,7 +9,6 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import Cookies from 'universal-cookie';
 import { useTranslation } from "../hooks/useTranslation";
-import { useLang } from "../context/LanguageContext";
 import { t } from "../i18n";
 import LangToggle from "../components/LangToggle";
 
@@ -17,9 +16,7 @@ const Navbar = ({ role, setRole, hideLangToggle = false }) => {
   const [showOpt, setShowOpt] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
-
   const tr = useTranslation();
-  const { lang } = useLang();
 
   const desktopRef = useRef(null);
   const desktopDropdownRef = useRef(null);
@@ -235,23 +232,26 @@ const Navbar = ({ role, setRole, hideLangToggle = false }) => {
         </div>
       </section>
 
-      <div className="relative z-[200]">
-        <SideBar
-          menus={menu}
-          visible={sidebarOpen}
-          onClose={() => setSidebarOpen(false)}
-          role={showOpt ? role : undefined}
-          setRole={showOpt ? setRole : undefined}
-          isLoggedIn={!!token || !!adminToken}
-          showSignup={!token && !adminToken && !isAdminPage}
-          showLogin={!token && !adminToken && !isAdminPage}
-          onLogout={handleLogout}
-          token={token}
-          adminToken={adminToken}
-          user={user}
-          hideLangToggle={hideLangToggle}
-        />
-      </div>
+      {sidebarOpen && (
+        <div className="relative z-[200]">
+          <SideBar
+            menus={menu}
+            visible={sidebarOpen}
+            onClose={() => setSidebarOpen(false)}
+            role={showOpt ? role : undefined}
+            setRole={showOpt ? setRole : undefined}
+            isLoggedIn={!!token || !!adminToken}
+            showSignup={!token && !adminToken && !isAdminPage}
+            showLogin={!token && !adminToken && !isAdminPage}
+            onLogout={handleLogout}
+            token={token}
+            adminToken={adminToken}
+            user={user}
+            hideLangToggle={hideLangToggle}
+          />
+        </div>
+      )}
+
     </nav>
   );
 };

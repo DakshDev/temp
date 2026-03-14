@@ -1,11 +1,9 @@
-import React from 'react';
 import { Instagram, Linkedin } from 'lucide-react';
 import { FaTiktok, FaYoutube, FaXTwitter, FaWhatsapp } from 'react-icons/fa6';
 import footerIcon from "../assets/General/footer-icon.png"
 import JoinWaitlist_Btn from "./JoinWaitlist_Btn";
-import { Link, useLocation } from 'react-router-dom'; // Added useLocation
+import { useLocation } from 'react-router-dom'; // Added useLocation
 import { useTranslation } from '../hooks/useTranslation';
-import { useLang } from '../context/LanguageContext';
 import { t } from '../i18n';
 
 // --- DESIGN CONSTANTS ---
@@ -18,10 +16,7 @@ const Footer = () => {
   const location = useLocation();
   const isGuidePage = location.pathname === '/guide';
   const isBlogArea = location.pathname.startsWith('/blog') || location.pathname.startsWith('/blog') || location.pathname.startsWith('/author');
-
   const tr = useTranslation()
-  const { lang } = useLang()
-
   const trEffective = isBlogArea ? (key) => t(key, 'en') : tr;
 
   const linkColumns = [

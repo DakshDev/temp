@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { MentorCard } from "./MentorCard";
-import { useTranslation } from '../hooks/useTranslation';
-import { useLang } from '../context/LanguageContext';
 
-export const MentorCarousel = () => {
-  const tr = useTranslation();
-  const { lang } = useLang();
+export const MentorCarousel = ({tr, lang}) => {
+  // const tr = useTranslation();
   const scrollRef = useRef(null);
 
   const mentors = [
@@ -124,7 +121,7 @@ export const MentorCarousel = () => {
           {tr('mentor_carousel_sub')}
         </p>
       </div>
-
+    
       <div
         ref={scrollRef}
         className="flex gap-4 md:gap-6 overflow-x-hidden cursor-grab active:cursor-grabbing select-none pl-4 md:pl-6"

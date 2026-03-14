@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { Plus, Minus, Target, TrendingUp, Clock } from 'lucide-react';
-import DASHBOARD_IMAGE_URL from '../../assets/Grower/journey.png';
+import { useState } from 'react';
 import feature1 from '../../assets/Guide/feature1.png';
 import feature2 from '../../assets/Guide/feature2.png';
 import feature3 from '../../assets/Guide/feature3.png';

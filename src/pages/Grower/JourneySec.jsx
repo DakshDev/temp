@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-import { Plus, Minus, Target, TrendingUp, Clock } from 'lucide-react';
-import DASHBOARD_IMAGE_URL from '../../assets/Grower/journey.png';
-import feature1 from '../../assets/Grower/feature1.png';
-import feature2 from '../../assets/Grower/feature2.png';
-import feature3 from '../../assets/Grower/feature3.png';
-import feature4 from '../../assets/Grower/feature4.png';
-import feature5 from '../../assets/Grower/feature5.png';
-import feature6 from '../../assets/Grower/feature6.png';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useState } from 'react';
+import feature1 from '../../assets/Grower/feature1.webp';
+import feature2 from '../../assets/Grower/feature2.webp';
+import feature3 from '../../assets/Grower/feature3.webp';
+import feature4 from '../../assets/Grower/feature4.webp';
+import feature5 from '../../assets/Grower/feature5.webp';
+import feature6 from '../../assets/Grower/feature6.webp';
 // Import your other images here:
 // import SET_GOALS_IMG from '../../assets/Grower/set-goals.png'; 
 
@@ -18,10 +15,9 @@ const DARK_GRAY = '#777E87';
 const TEXT_GRAY = '#606060';
 const LIGHT_GRAY = "#E6E8EB";
 
-const JourneySec = () => {
+const JourneySec = ({tr}) => {
   const [activeStep, setActiveStep] = useState(2);
-
-  const tr = useTranslation();
+  // const tr = useTranslation();
 
   const steps = [
     { id: 1, title: tr("step_1_title"), content: tr("step_1_desc"), image: feature1 },

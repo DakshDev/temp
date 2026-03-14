@@ -1,7 +1,6 @@
-import React from 'react';
-import frame1 from "../../assets/Exclusive/frame.png"
+import frame1 from "../../assets/Exclusive/frame.webp"
 import PayButton from '../../components/PayButton';
-import frame2 from "../../assets/Exclusive/frame2.png"
+import frame2 from "../../assets/Exclusive/frame2.webp"
 import { useTranslation } from '../../hooks/useTranslation';
 
 const ExclusiveAccessCard = () => {
@@ -42,6 +41,7 @@ const ExclusiveAccessCard = () => {
                  
         
                   <img 
+                    loading="lazy"
                     src={frame1} // Replace with your actual image path
                     alt="3D Abstract Knot" 
                     className="md:w-full rounded-[40px] md:flex hidden md:h-full object-cover h-[350px] w-[350px] text-right items-end justify-end drop-shadow-2xl"
@@ -49,6 +49,7 @@ const ExclusiveAccessCard = () => {
                
         
                    <img 
+                    loading="lazy"
                     src={frame2} // Replace with your actual image path
                     alt="3D Abstract Knot" 
                     className="md:w-full md:hidden rounded-[40px]  mt-[-20%]  flex md:h-full object-cover w-[100%]  text-right items-end justify-end drop-shadow-2xl"

@@ -1,10 +1,8 @@
-import React, { useRef, useEffect } from 'react'
+import  { useRef, useEffect } from 'react'
 import Banner from "../../assets/Guide/HomeGuide.png";
-import Banner1 from "../../assets/Guide/HomeGuideMobile.png"
 import JoinWaitlist_Btn from "../../components/JoinWaitlist_Btn";
-import LeftShade from "../../assets/Grower/LeftShade.png"
-import RightShade from "../../assets/Grower/RightShade.png"
-import WatchAVideoGuide from '../../components/WatchAVideoGuide';
+import LeftShade from "../../assets/Grower/LeftShade.webp"
+import RightShade from "../../assets/Grower/RightShade.webp"
 import { useLang } from '../../context/LanguageContext';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -91,11 +89,11 @@ const HeroGuide = () => {
 
         {/* left Shade */}
         <div className="hidden md:block md:absolute xs:top-0 lg:-top-48 lg:-left-60 z-0">
-          <img src={LeftShade} alt="" className="" />
+          <img loading='lazy' src={LeftShade} alt="" className="" />
         </div>
         {/* Right Shade */}
         <div className="hidden md:block md:absolute xs:top-0 lg:-top-48 lg:-right-60 z-0">
-          <img src={RightShade} alt="" className="" />
+          <img loading='lazy' src={RightShade} alt="" className="" />
         </div>
       </div>
     </section>

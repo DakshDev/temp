@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
-import { IoMdArrowBack, IoMdCheckmarkCircle } from "react-icons/io";
+import { useContext, useEffect, useState, useRef } from 'react';
+import { IoMdArrowBack } from "react-icons/io";
 import thankyouIcon from "../assets/ThankYou/icon1.png"
 import thankyouIconCircle from "../assets/ThankYou/icon2.png"
-import PayButton from './PayButton';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';

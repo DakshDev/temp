@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Navbar from '../layout/Navbar'
-import Home from '../pages/Home'
 import Exclusive from '../pages/Exclusive'
 import Admin from '../pages/Admin'
 import Footer from '../components/Footer'
@@ -30,15 +29,19 @@ import AdminProtectedRoute from '../components/AdminProtectedRoute'
 import Chatbot from '../components/Chatbot'
 
 const AppContent = ({ role, setRole }) => {
-  const location = useLocation();
-
   const hideLangToggle = false; // Language toggle always visible in navbar
+  const [isLoaded, setLoaded] = useState(false)
+  useEffect(() => {
+    if (document.readyState === "complete") {
+    (() => setLoaded(true))();
+    } else {
+      window.addEventListener("load", () => setLoaded(true));
+    }
+  }, [])
 
   return (
     <>
       <Navbar role={role} setRole={setRole} hideLangToggle={hideLangToggle} />
-      <ToastContainer />
-      <CookieBanner />
       <Routes>
         <Route path='/' element={<Grower role={role} />} />
         <Route path='/guide' element={<Guide role={role} />} />
@@ -62,7 +65,13 @@ const AppContent = ({ role, setRole }) => {
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
       <Footer />
-      <Chatbot />
+      {isLoaded && (
+        <>
+        <Chatbot />
+        <CookieBanner />
+        <ToastContainer />
+        </>
+      )}
     </>
   );
 };

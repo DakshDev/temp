@@ -5,6 +5,7 @@ export const MentorCard = ({ mentor }) => {
     <div className="mentor-card group relative flex-shrink-0 w-[280px] sm:w-[380px] md:w-[450px] lg:w-[500px] h-[200px] sm:h-[240px] md:h-[260px] lg:h-[280px] rounded-xl md:rounded-2xl overflow-hidden cursor-pointer shadow-lg transition-shadow duration-300">
       {/* Background Image */}
       <img
+        loading="lazy"
         src={mentor.image}
         alt={mentor.name}
         className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700"

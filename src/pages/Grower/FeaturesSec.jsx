@@ -1,18 +1,11 @@
-import React from "react";
-import { LuGraduationCap } from "react-icons/lu";
-import { LuBookMarked } from "react-icons/lu";
-import { LuUsersRound } from "react-icons/lu";
-import Personalized from '../../assets/Grower/Personalized.png';
-import Grow from '../../assets/Grower/Grow.png';
-import Learn from '../../assets/Grower/Learn2.png';
-import JoinWaitlist_Btn from "../../components/JoinWaitlist_Btn";
-import { useTranslation } from "../../hooks/useTranslation";
-import { useLang } from "../../context/LanguageContext";
+import { LuBookMarked, LuUsersRound, LuGraduationCap } from "react-icons/lu";
+import Personalized from '../../assets/Grower/Personalized.webp';
+import Grow from '../../assets/Grower/Grow.webp';
+import Learn from '../../assets/Grower/Learn2.webp';
+import JoinWaitlist_Btn from "../../components/JoinWaitlist_Btn"
 
-const FeaturesSec = () => {
-
-  const tr = useTranslation();
-  const { lang } = useLang();
+const FeaturesSec = ({tr}) => {
+  // const tr = useTranslation();
 
   const GrowFeaturesCards = [
     {
