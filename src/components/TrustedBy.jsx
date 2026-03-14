@@ -31,6 +31,7 @@ const TrustedBy = ({tr}) => {
               className="flex items-center justify-center w-32 md:w-40 h-12 md:h-14 transition-all duration-300 hover:scale-110"
             >
               <img
+                loading='lazy'
                 src={partner.logo}
                 alt={partner.name}
                 className={`${partner.height} w-auto object-contain`}

@@ -103,6 +103,7 @@ const JourneySec = ({tr}) => {
             <div className="lg:sticky lg:top-24 w-full h-full">
               {steps.map((step) => (
                 <img
+                  loading='lazy'
                   key={step.id}
                   src={step.image}
                   alt={step.title}

@@ -67,6 +67,7 @@ const FeaturesSec = ({tr}) => {
                 {/* Card Image Wrapper - Ensuring it fits the container */}
                 <div className="w-full  mb-6 flex justify-center lg:justify-start">
                   <img
+                    loading="lazy"
                     src={card.image}
                     alt={card.title}
                     className={`w-full h-auto object-cover rounded-xl`}
